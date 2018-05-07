@@ -1,0 +1,241 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+/*下拉框整体祖先盒子，定位属性勿改*/
+.select_box,.select_box1,.select_box2{
+	width: 200px;
+	margin: 20px 0 0 20px;
+	position: relative;
+	z-index: 99999;
+	float: left;
+}
+
+/*下拉框文本选择内容展示区，定位属性勿改*/
+.select_model{
+	width: 100%;
+	height: 20px;
+	padding: 5px 0;
+	border: 1px solid #93A1A1;
+	font-size: 12px;
+	cursor: pointer;
+	position: relative;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+}
+.select_box2 > .select_model{
+	background-color: #FFFFFF;
+	border: 1px solid #D44950;
+	color: #D44950;
+}
+.select_model:hover{
+	border-color: #00AA88;
+	transition: border-color 0.5s ease-in-out;
+	-webkit-transition: border-color 0.5s ease-in-out;
+	-moz-transition: border-color 0.5s ease-in-out;
+	-ms-transition: border-color 0.5s ease-in-out;
+}
+.select_box2 > .select_model:hover{
+	border-color: #FF6600;
+	transition: border-color 0.5s ease-in-out;
+	-webkit-transition: border-color 0.5s ease-in-out;
+	-moz-transition: border-color 0.5s ease-in-out;
+	-ms-transition: border-color 0.5s ease-in-out;
+}
+
+.select_val{
+	width: 100%;
+	height: 100%;
+	line-height: 100%;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	text-indent: 2em;
+}
+.select_arrow{
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-left: 1px solid #6b6b6b;
+    border-bottom: 1px solid #6b6b6b;
+    top: 8px;
+    right: 12px;
+    position: absolute;
+    transform: rotate(-46deg);
+    transition: all .3s ease-in;
+}
+.select_box2 .select_arrow{
+	border-left: 1px solid #D44950;
+    border-bottom: 1px solid #D44950;
+}
+/*下拉区域的主体样式,如果要特殊定制,只需从祖先盒子的名字 > .select_check选择后定制特殊样式*/
+.select_check{
+	width: 99%;
+	height: auto;
+	overflow-x: hidden;
+	border: 1px solid #93A1A1;
+	background-color: #FFFFFF;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	display: none;
+	padding: 10px 0;
+	position: absolute;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+}
+.select_box2 > .select_check{
+	border: 1px solid #D44950;
+}
+.select_check::-webkit-scrollbar {
+ width: 8px;
+}
+.select_check::-webkit-scrollbar-track {
+	background-color: rgba(0,0,0,.3);
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius:2em;
+}
+.select_box2 > .select_check::-webkit-scrollbar-track {
+	background-color: rgba(212,73,80,.3);
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius:2em;
+}
+.select_check::-webkit-scrollbar-thumb {
+	background-color:rgba(0,0,0,.5);
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius:2em;
+}
+.select_box2 > .select_check::-webkit-scrollbar-thumb {
+	background-color:rgba(212,73,80,.5);
+	-webkit-border-radius: 2em;
+	-moz-border-radius: 2em;
+	border-radius:2em;
+}
+.select_check > dd{
+	width: 100%;
+	height: 30px;
+	line-height: 26px;
+	cursor: pointer;
+	font-size: 12px;
+	margin-left: 0px !important;
+	text-indent: 2em;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space:nowrap;
+	display: block;
+}
+.select_box2 > .select_check > dd{
+	color: #D44950;
+}
+.select_check > dd:hover{
+	background-color: #fbfbfb;
+}
+/*此为选中的下拉元素的标识样式,可根据不同需要自定义class名称,定义到js参数*/
+.select_shadow{
+	background-color: #EEEEEE !important;
+}
+.select_shadow1{
+	background-color: #ff9399 !important;
+	color: #FFFFFF !important;
+}
+
+@keyframes myflipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    -ms-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    -ms-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes myflipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(-90deg);
+    transform: perspective(400px) rotateX(-90deg);
+    opacity: 0;
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+  }
+}
+
+@keyframes myflipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(-90deg);
+    -ms-transform: perspective(400px) rotateX(-90deg);
+    transform: perspective(400px) rotateX(-90deg);
+    opacity: 0;
+    transform-origin: 50% 0;
+    -webkit-transform-origin: 50% 0;
+  }
+}
+
+.myflipOutX {
+  -webkit-animation-name: myflipOutX;
+  animation-name: myflipOutX;
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+
+
+.myflipInX{
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: myflipInX;
+  animation-name: myflipInX;
+}

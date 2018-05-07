@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义下拉框</title>
+		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/animateSelect2.0.css" />
+		<script type="text/javascript" src="js/jquery-2.1.1.js" ></script>
+	</head>
+	
+	<body>	
+		<div style="width: 100%; height: 500px;"></div>
+		
+		<div class="select_box">
+			<div class="select_model">
+				<input class="select_val" type="text" select-val="" value="">
+			</div>
+			<dl class="select_check">
+				<!--<dd select-value="">请选择省份</dd>-->
+				<dd select-value="01">安徽省 </dd>
+				<dd select-value="02">澳门特别行政区</dd>
+				<dd select-value="03">北京市</dd>
+				<dd select-value="04">重庆市</dd>
+				<dd select-value="05">福建省</dd>
+				<dd select-value="06">甘肃省</dd>
+				<dd select-value="07">广东省</dd>
+				<dd select-value="08">广西壮族自治区</dd>
+				<dd select-value="09">贵州省</dd>
+				<dd select-value="10">海南省</dd>
+				<dd select-value="11">河北省</dd>
+				<dd select-value="12">黑龙江省</dd>
+				<dd select-value="13">河南省</dd>
+				<dd select-value="14">湖北省</dd>
+				<dd select-value="15">湖南省</dd>
+				<dd select-value="16">江苏省</dd>
+				<dd select-value="17">江西省</dd>
+				<dd select-value="18">吉林省</dd>
+				<dd select-value="19">辽宁省</dd>
+				<dd select-value="20">内蒙古</dd>
+				<dd select-value="21">宁夏回族自治区</dd>
+				<dd select-value="22">青海省</dd>
+				<dd select-value="23">陕西省</dd>
+				<dd select-value="24">山东省</dd>
+				<dd select-value="25">上海市</dd>
+				<dd select-value="26">山西省</dd>
+				<dd select-value="27">四川省</dd>
+				<dd select-value="28">台湾省</dd>
+				<dd select-value="29">天津市</dd>
+				<dd select-value="30">香港特别行政区</dd>
+				<dd select-value="31">新疆维吾尔族自治区</dd>
+				<dd select-value="32">西藏自治区</dd>
+				<dd select-value="33">云南省</dd>
+				<dd select-value="34">浙江省</dd>
+			</dl>
+		</div>
+		<div style="width: 400px; float: left; margin-left: 50px;">
+			<p id="is_change"></p>
+			<p>当前下拉框文本内容为<span style="color: red;" id="opt_html"></span></p>
+			<p>当前下拉框的value值为<span style="color: red;" id="opt_value"></span></p>
+		</div>
+		
+		
+		<div class="select_box2">
+			<div class="select_model">
+				<input class="select_val" type="text" value="" select-val="12" style="color: #D44950;">
+			</div>
+			<dl class="select_check">
+				<dd select-value="">请选择省份</dd>
+				<dd select-value="01">安徽省 </dd>
+				<dd select-value="02">澳门特别行政区</dd>
+				<dd select-value="03">北京市</dd>
+				<dd select-value="04">重庆市</dd>
+				<dd select-value="05">福建省</dd>
+				<dd select-value="06">甘肃省</dd>
+				<dd select-value="07">广东省</dd>
+				<dd select-value="08">广西壮族自治区</dd>
+				<dd select-value="09">贵州省</dd>
+				<dd select-value="10">海南省</dd>
+				<dd select-value="11">河北省</dd>
+				<dd select-value="12">黑龙江省</dd>
+				<dd select-value="13">河南省</dd>
+				<dd select-value="14">湖北省</dd>
+				<dd select-value="15">湖南省</dd>
+				<dd select-value="16">江苏省</dd>
+				<dd select-value="17">江西省</dd>
+				<dd select-value="18">吉林省</dd>
+				<dd select-value="19">辽宁省</dd>
+				<dd select-value="20">内蒙古</dd>
+				<dd select-value="21">宁夏回族自治区</dd>
+				<dd select-value="22">青海省</dd>
+				<dd select-value="23">陕西省</dd>
+				<dd select-value="24">山东省</dd>
+				<dd select-value="25">上海市</dd>
+				<dd select-value="26">山西省</dd>
+				<dd select-value="27">四川省</dd>
+				<dd select-value="28">台湾省</dd>
+				<dd select-value="29">天津市</dd>
+				<dd select-value="30">香港特别行政区</dd>
+				<dd select-value="31">新疆维吾尔族自治区</dd>
+				<dd select-value="32">西藏自治区</dd>
+				<dd select-value="33">云南省</dd>
+				<dd select-value="34">浙江省</dd>
+			</dl>
+			<input data-select="animateSelect" type="hidden" id="" name="" value="05" />
+		</div>
+		<div style="width: 400px; float: left; margin-left: 50px;">
+			<p id="is_change1"></p>
+			<p>当前下拉框文本内容为<span style="color: red;" id="opt_html1"></span></p>
+			<p>当前下拉框的value值为<span style="color: red;" id="opt_value1"></span></p>
+		</div>
+
+		
+		<div style="width: 100%; height: 500px;"></div>
+		
+	</body>
+	
+	<script type="text/javascript" src="js/animateSelect2.0.js" ></script>	
+	<script>		
+		$(".select_box").animateSelect({
+			inputSearch: true
+		});
+		$(".select_box2").animateSelect({
+			displayAnim : 'myflipInX',
+			hideAnim: 'myflipOutX',
+			displayTime: '1000',
+			hideTime: '400',
+			shadowClass: 'select_shadow1'
+		});
+		$(document).ready(function(){
+			$("#opt_html").html($(".select_box .select_val").val());
+			$("#opt_value").html($(".select_box .select_val").attr('select-val'));
+			$("#opt_html1").html($(".select_box2 .select_val").val());
+			$("#opt_value1").html($(".select_box2 .select_val").attr('select-val'));
+			
+			$('.select_box dl.select_check dd').on('click',function(){
+				var is_change = $(".select_box .select_val").attr('data-change');
+				if(is_change == 'true'){
+					$("#is_change").html('当前下拉框的值<span style="color: #AA0000;">发生</span>了变化');
+				}else{
+					$("#is_change").html('当前下拉框的值<span style="color: #AA0000;">未发生</span>变化');
+				}
+				var select_html = $(this).html();
+				$("#opt_html").html(select_html);
+				var opt_value = $(this).attr('select-value');
+				$("#opt_value").html(opt_value);
+			})
+			
+			$('.select_box2 dl.select_check dd').on('click',function(){
+				var is_change = $(".select_box2 .select_val").attr('data-change');
+				if(is_change == 'true'){
+					$("#is_change1").html('当前下拉框的值<span style="color: #AA0000;">发生</span>了变化');
+				}else{
+					$("#is_change1").html('当前下拉框的值<span style="color: #AA0000;">未发生</span>变化');
+				}
+				var select_html = $(this).html();
+				$("#opt_html1").html(select_html);
+				var opt_value = $(this).attr('select-value');
+				$("#opt_value1").html(opt_value);
+			})
+		})
+	</script>
+</html>
